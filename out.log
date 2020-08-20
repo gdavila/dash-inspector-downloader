@@ -1,0 +1,34 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+1/0001.m4s
+1/0002.m4s
+1/0003.m4s
+1/init.mp4
+2/0001.m4s
+2/0002.m4s
+2/0003.m4s
+2/init.mp4
+3/0001.m4s
+3/0002.m4s
+3/0003.m4s
+3/init.mp4
+4/0001.m4s
+4/0002.m4s
+4/0003.m4s
+4/init.mp4
+5/0001.m4s
+5/0002.m4s
+5/0003.m4s
+5/init.mp4
+Downloading 1 ...
+Creating  1 media file...
+['0001.m4s', '0002.m4s', '0003.m4s']
+cat init.mp4 0001.m4s 0002.m4s 0003.m4s > "/home/gabriel/tools/dash-dwnld-py/Media/Manifest_1080p/1.mp4"
+Downloading 2 ...
+Creating  2 media file...
+['0001.m4s', '0002.m4s', '0003.m4s']
+cat init.mp4 0001.m4s 0002.m4s 0003.m4s > "/home/gabriel/tools/dash-dwnld-py/Media/Manifest_1080p/2.mp4"
+Downloading 3 ...
