@@ -8,7 +8,7 @@ It parse the logfile obtained through [dash-inspector](https://github.com/gdavil
 
 Additionally, once the video segments are downloaed, they are concatenated as a single video. One video is produced by each dash representation.
 
-# How to use it
+## How to use it
 
 Just clone the repo and run `getDashSements.py`
 
