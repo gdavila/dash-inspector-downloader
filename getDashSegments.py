@@ -16,7 +16,8 @@ class segmentGenerator:
             return
         baseUrl =  self.mpdSummary['baseUrl']+self.mpdSummary['periodUrl']
         for mediaFile in self.playbackReference:
-            time = mediaFile['startTime']*mediaFile['timescale']
+            time = round(mediaFile['startTime']*mediaFile['timescale'])
+            print ("time", time)
             number = mediaFile['index']+1
             segmentName = getSegmentName(repInfo['media'], time,number,repId)
             segmentName = baseUrl + segmentName
@@ -41,9 +42,12 @@ def getSegmentName (SegmentTemplate, time, number, repID):
     if (time != None and number != None):
         segment = segment.replace('$Time$', '%d' % time)
         fmt = getNumberAtr (segment)
-        if fmt == "": fmt = '%d'
-        segment = segment.replace('$Number' + fmt + '$', fmt % number)
-    print (segment, flush=True)
+        #if fmt == "": fmt = '%d'
+        if fmt != "":
+            segment = segment.replace('$Number' + fmt + '$', fmt % number)
+        else:
+            segment = segment.replace('$Number$', str(number))
+    print (segment, "r")
     return segment
 
 def getNumberAtr(SegmentTemplate):
@@ -114,6 +118,7 @@ def getDashSegments(mediaFilesInfo, representations = None):
         mediaFilesByRepresentation[repId] = {}
         mediaFilesByRepresentation[repId]['mediaSeg'] = segments.getSegmentsList(repId)
         mediaFilesByRepresentation[repId]['initSeg'] = segments.getInitFile(repId)
+
 
     mimeType= mediaFilesInfo['MediaInfo']['mimeType']
 
